@@ -1,0 +1,718 @@
+.cassetteplay {
+  align-items: flex-start;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  min-height: 812px;
+  width: 375px;
+}
+
+.cassetteplay .overlap-group7 {
+  align-items: flex-start;
+  background-image: url(../../../../../img/cassette--play-view-background--overlay-A08EEFA0-F7F0-41C9-AB34-8CB84937664F.png);
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 123px;
+  min-height: 669px;
+  width: 375px;
+}
+
+.cassetteplay .navigation-bar {
+  align-items: flex-start;
+  background-color: #22242ad9;
+  border: 1px solid;
+  border-color: #00000036;
+  display: flex;
+  justify-content: flex-end;
+  min-width: 375px;
+  padding: 0 16.0px;
+}
+
+.cassetteplay .overlap-group6 {
+  height: 65px;
+  position: relative;
+  width: 308px;
+}
+
+.cassetteplay .text-action {
+  font-weight: 700;
+  height: 65px;
+  left: 124px;
+  letter-spacing: 6.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: right;
+  text-shadow: 0px 1px 0px #00000080;
+  top: 0;
+  width: 184px;
+}
+
+.cassetteplay .view-name {
+  font-weight: 700;
+  height: 65px;
+  left: 0;
+  letter-spacing: 9.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  text-shadow: 0px 1px 0px #00000080;
+  top: 0;
+  width: 272px;
+}
+
+.cassetteplay .cassette {
+  display: flex;
+  height: 326px;
+  margin-left: -75px;
+  transform: rotate(-90deg);
+  width: 523px;
+}
+
+.cassetteplay .mixtape {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  min-width: 523px;
+}
+
+.cassetteplay .overlap-group4 {
+  height: 352px;
+  margin-left: -12px;
+  margin-top: -8.4px;
+  position: relative;
+  width: 540px;
+}
+
+.cassetteplay .tape {
+  height: 303px;
+  left: 20px;
+  width: 498px;
+}
+
+.cassetteplay .overlap-group1 {
+  height: 293px;
+  left: 2px;
+  position: absolute;
+  top: 11px;
+  width: 293px;
+}
+
+.cassetteplay .tape-1 {
+  height: 229px;
+  left: 32px;
+  width: 230px;
+}
+
+.cassetteplay .overlap-group {
+  height: 107px;
+  left: 90px;
+  position: absolute;
+  top: 92px;
+  width: 107px;
+}
+
+.cassetteplay .combined-shape {
+  height: 54px;
+  left: 27px;
+  position: absolute;
+  top: 27px;
+  width: 54px;
+}
+
+.cassetteplay .combined-shape-1 {
+  height: 99px;
+  left: 4px;
+  position: absolute;
+  top: 4px;
+  width: 99px;
+}
+
+.cassetteplay .combined-shape-2 {
+  height: 11px;
+  left: 51px;
+  position: absolute;
+  top: 11px;
+  width: 11px;
+}
+
+.cassetteplay .combined-shape-3 {
+  height: 11px;
+  left: 70px;
+  position: absolute;
+  top: 18px;
+  width: 11px;
+}
+
+.cassetteplay .combined-shape-9 {
+  height: 11px;
+  left: 81px;
+  position: absolute;
+  top: 32px;
+  width: 11px;
+}
+
+.cassetteplay .combined-shape-10 {
+  height: 11px;
+  left: 85px;
+  position: absolute;
+  top: 48px;
+  width: 11px;
+}
+
+.cassetteplay .combined-shape-11 {
+  height: 11px;
+  left: 80px;
+  position: absolute;
+  top: 66px;
+  width: 11px;
+}
+
+.cassetteplay .combined-shape-12 {
+  height: 11px;
+  left: 68px;
+  position: absolute;
+  top: 79px;
+  width: 11px;
+}
+
+.cassetteplay .combined-shape-13 {
+  height: 11px;
+  left: 48px;
+  position: absolute;
+  top: 85px;
+  width: 11px;
+}
+
+.cassetteplay .combined-shape-14 {
+  height: 11px;
+  left: 29px;
+  position: absolute;
+  top: 80px;
+  width: 11px;
+}
+
+.cassetteplay .combined-shape-15 {
+  height: 11px;
+  left: 16px;
+  position: absolute;
+  top: 68px;
+  width: 11px;
+}
+
+.cassetteplay .combined-shape-4 {
+  height: 11px;
+  left: 11px;
+  position: absolute;
+  top: 48px;
+  width: 11px;
+}
+
+.cassetteplay .combined-shape-5 {
+  height: 107px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 107px;
+}
+
+.cassetteplay .combined-shape-6 {
+  height: 64px;
+  left: 22px;
+  position: absolute;
+  top: 22px;
+  width: 64px;
+}
+
+.cassetteplay .combined-shape-7 {
+  height: 50px;
+  left: 29px;
+  position: absolute;
+  top: 29px;
+  width: 50px;
+}
+
+.cassetteplay .rectangle-5-4 {
+  box-shadow: 0px 3px 4px #00000033;
+  left: 60px;
+  top: 34px;
+  transform: rotate(35deg);
+}
+
+.cassetteplay .rectangle-5 {
+  border-radius: 2.4px;
+  box-shadow: 0px -3px 3px #00000033;
+  height: 10px;
+  left: 40px;
+  position: absolute;
+  top: 64px;
+  transform: rotate(35deg);
+  width: 7px;
+}
+
+.cassetteplay .rectangle-5-1 {
+  box-shadow: 0px 3px 4px #00000033;
+  left: 68px;
+  top: 49px;
+  transform: rotate(90deg);
+}
+
+.cassetteplay .rectangle-5-2 {
+  box-shadow: 0px -3px 3px #00000033;
+  left: 32px;
+  top: 49px;
+  transform: rotate(90deg);
+}
+
+.cassetteplay .rectangle-5-3 {
+  box-shadow: 0px 4px 3px #00000033;
+  left: 40px;
+  top: 34px;
+  transform: rotate(-35deg);
+}
+
+.cassetteplay .rectangle-5-5 {
+  box-shadow: 0px -3px 3px #00000033;
+  left: 60px;
+  top: 64px;
+  transform: rotate(-35deg);
+}
+
+.cassetteplay .clip {
+  height: 33px;
+  left: 5px;
+  position: absolute;
+  top: 7px;
+  transform: rotate(-13deg);
+  width: 46px;
+}
+
+.cassetteplay .reel {
+  height: 293px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 293px;
+}
+
+.cassetteplay .reel-tape {
+  align-items: flex-start;
+  display: flex;
+  height: 235px;
+  justify-content: flex-end;
+  left: 274px;
+  min-width: 235px;
+  position: absolute;
+  top: 38px;
+  transform: rotate(75deg);
+}
+
+.cassetteplay .overlap-group2 {
+  height: 293px;
+  margin-top: -27.35px;
+  position: relative;
+  width: 293px;
+}
+
+.cassetteplay .tape-2 {
+  height: 229px;
+  left: 31px;
+  width: 230px;
+}
+
+.cassetteplay .overlap-group-1 {
+  height: 107px;
+  left: 89px;
+  position: absolute;
+  top: 92px;
+  width: 107px;
+}
+
+.cassetteplay .combined-shape-16 {
+  height: 11px;
+  left: 82px;
+  position: absolute;
+  top: 32px;
+  width: 11px;
+}
+
+.cassetteplay .combined-shape-17 {
+  height: 11px;
+  left: 86px;
+  position: absolute;
+  top: 48px;
+  width: 11px;
+}
+
+.cassetteplay .combined-shape-18 {
+  height: 11px;
+  left: 81px;
+  position: absolute;
+  top: 66px;
+  width: 11px;
+}
+
+.cassetteplay .combined-shape-19 {
+  height: 11px;
+  left: 69px;
+  position: absolute;
+  top: 79px;
+  width: 11px;
+}
+
+.cassetteplay .combined-shape-20 {
+  height: 11px;
+  left: 49px;
+  position: absolute;
+  top: 85px;
+  width: 11px;
+}
+
+.cassetteplay .combined-shape-21 {
+  height: 11px;
+  left: 30px;
+  position: absolute;
+  top: 81px;
+  width: 11px;
+}
+
+.cassetteplay .combined-shape-22 {
+  height: 11px;
+  left: 17px;
+  position: absolute;
+  top: 68px;
+  width: 11px;
+}
+
+.cassetteplay .rectangle-5-6 {
+  box-shadow: 0px 3px 4px #00000033;
+  left: 61px;
+  top: 34px;
+  transform: rotate(35deg);
+}
+
+.cassetteplay .rectangle-5-7 {
+  box-shadow: 0px -3px 3px #00000033;
+  left: 61px;
+  top: 64px;
+  transform: rotate(-35deg);
+}
+
+.cassetteplay .frame {
+  height: 339px;
+  left: 8px;
+  position: absolute;
+  top: 7px;
+  width: 525px;
+}
+
+.cassetteplay .reel-bottom-left {
+  left: 37px;
+  top: 280px;
+  width: 48px;
+}
+
+.cassetteplay .reel-bottom-right {
+  align-items: flex-start;
+  display: flex;
+  gap: 10px;
+  left: 453px;
+  min-width: 54px;
+  top: 279px;
+}
+
+.cassetteplay .overlap-group3 {
+  align-self: flex-end;
+  background-image: url(../../img/cassette--play-fill-1-E3CCD9D6-3FE5-4FB7-A9B4-676E5E31C27B@2x.png);
+  background-size: 100% 100%;
+  height: 31px;
+  position: relative;
+  width: 31px;
+}
+
+.cassetteplay .fill-9 {
+  height: 25px;
+  left: 3px;
+  position: absolute;
+  top: 3px;
+  width: 25px;
+}
+
+.cassetteplay .wheel {
+  align-items: center;
+  background-image: url(../../img/cassette--play-fill-6-A789BFB4-036E-42D2-B36D-0CC0FE9010AB@2x.png);
+  background-size: 100% 100%;
+  display: flex;
+  height: 25px;
+  left: 3px;
+  min-width: 25px;
+  padding: 0 7px;
+  position: absolute;
+  top: 3px;
+}
+
+.cassetteplay .overlap-group-2 {
+  align-items: flex-start;
+  background-image: url(../../img/cassette--play-fill-14-950FE3BF-8213-4F2C-BF8A-01AF556819DD@2x.png);
+  background-size: 100% 100%;
+  display: flex;
+  min-width: 11px;
+}
+
+.cassetteplay .fill-16 {
+  height: 11px;
+  width: 11px;
+}
+
+.cassetteplay .fill-21 {
+  height: 8px;
+  left: 19px;
+  position: absolute;
+  top: 19px;
+  width: 8px;
+}
+
+.cassetteplay .fill-24 {
+  height: 8px;
+  left: 18px;
+  position: absolute;
+  top: 18px;
+  width: 8px;
+}
+
+.cassetteplay .fill-2 {
+  height: 9px;
+  left: 21px;
+  position: absolute;
+  top: 9px;
+  width: 7px;
+}
+
+.cassetteplay .fill-31 {
+  height: 7px;
+  left: 14px;
+  position: absolute;
+  top: 3px;
+  width: 8px;
+}
+
+.cassetteplay .fill-34 {
+  height: 7px;
+  left: 14px;
+  position: absolute;
+  top: 3px;
+  width: 9px;
+}
+
+.cassetteplay .fill-3 {
+  height: 8px;
+  left: 5px;
+  position: absolute;
+  top: 5px;
+  width: 8px;
+}
+
+.cassetteplay .overlap-group3-item {
+  height: 9px;
+  left: 3px;
+  position: absolute;
+  top: 14px;
+  width: 7px;
+}
+
+.cassetteplay .fill-49 {
+  height: 7px;
+  left: 9px;
+  position: absolute;
+  top: 21px;
+  width: 9px;
+}
+
+.cassetteplay .stop {
+  height: 11px;
+  margin-top: -4px;
+  width: 15px;
+}
+
+.cassetteplay .forcella {
+  height: 82px;
+  left: 91px;
+  position: absolute;
+  top: 260px;
+  width: 359px;
+}
+
+.cassetteplay .body {
+  height: 352px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 540px;
+}
+
+.cassetteplay .window {
+  height: 111px;
+  left: 31px;
+  position: absolute;
+  top: 98px;
+  width: 478px;
+}
+
+.cassetteplay .top {
+  height: 104px;
+  left: 81px;
+  position: absolute;
+  top: 246px;
+  width: 375px;
+}
+
+.cassetteplay .screw-top-left {
+  left: 19px;
+}
+
+.cassetteplay .combined-shape-8 {
+  height: 10px;
+  transform: rotate(45deg);
+  width: 10px;
+}
+
+.cassetteplay .screw-top-right {
+  left: 499px;
+}
+
+.cassetteplay .screw-bottom-left {
+  left: 19px;
+}
+
+.cassetteplay .screw-bottom-right {
+  left: 499px;
+}
+
+.cassetteplay .controls {
+  align-items: flex-start;
+  background-color: #22242afa;
+  display: flex;
+  flex-direction: column;
+  min-height: 143px;
+  width: 375px;
+}
+
+.cassetteplay .audio-progress {
+  background-color: #f9f9f9;
+  box-shadow: 0px 2px 0px #715c8e4c;
+  height: 2px;
+  width: 329px;
+}
+
+.cassetteplay .overlap-group5 {
+  align-self: flex-end;
+  height: 30px;
+  margin-right: 6px;
+  margin-top: 23px;
+  position: relative;
+  width: 291px;
+}
+
+.cassetteplay .runtime {
+  color: var(--white);
+  font-family: var(--font-family-open_sans);
+  font-size: var(--font-size-m);
+  left: 218px;
+  letter-spacing: 4.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: right;
+  top: 0;
+  width: 73px;
+}
+
+.cassetteplay .title {
+  color: var(--white);
+  font-family: var(--font-family-timesnewromanpsmt);
+  font-size: var(--font-size-m);
+  left: 0;
+  letter-spacing: 4.00px;
+  line-height: 15px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.cassetteplay .overlap-group-3 {
+  align-self: center;
+  height: 54px;
+  margin-right: 0.48px;
+  margin-top: 9px;
+  position: relative;
+  width: 226px;
+}
+
+.cassetteplay .button-surface {
+  background-color: #22242a;
+  border: 1px solid;
+  border-color: #00000036;
+  border-radius: 27px;
+  box-shadow: 0px 0px 14px #0000002b;
+  height: 54px;
+  left: 8px;
+  position: absolute;
+  top: 0;
+  width: 211px;
+}
+
+.cassetteplay .label {
+  font-weight: 700;
+  height: 26px;
+  left: 0;
+  letter-spacing: 9.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  top: 14px;
+  width: 226px;
+}
+
+.cassetteplay .rectangle-5-8 {
+  border-radius: 2.4px;
+  height: 10px;
+  position: absolute;
+  width: 7px;
+}
+
+.cassetteplay .reel-bottom {
+  height: 42px;
+  position: absolute;
+}
+
+.cassetteplay .screw-bottom {
+  align-items: flex-start;
+  border: 0.56px solid;
+  border-color: var(--bunker);
+  border-radius: 22px;
+  box-shadow: 0px -3px 3px 1px #23272a1a, 0px 3px 3px 1px #0d0e1166;
+  display: flex;
+  height: 22px;
+  min-width: 22px;
+  padding: 5.4px;
+  position: absolute;
+  top: 307px;
+}
+
+.cassetteplay .screw-top {
+  align-items: flex-start;
+  border: 0.56px solid;
+  border-color: var(--bunker);
+  border-radius: 22px;
+  box-shadow: 0px -3px 3px 1px #23272a1a, 0px 3px 3px 1px #0d0e1166;
+  display: flex;
+  height: 22px;
+  min-width: 22px;
+  padding: 4.4px 5.4px;
+  position: absolute;
+  top: 15px;
+}
+
+.cassetteplay .tape-3 {
+  position: absolute;
+  top: 31px;
+}

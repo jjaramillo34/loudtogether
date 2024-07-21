@@ -377,7 +377,9 @@ io.on("connection", (socket) => {
   });
 });
 
-app.listen(port, () => console.log(`Server running on port ${port}`));
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 // Graceful shutdown
 process.on("SIGTERM", () => {

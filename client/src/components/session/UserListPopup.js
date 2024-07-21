@@ -1,7 +1,14 @@
 import React from "react";
 import { FaUsers } from "react-icons/fa";
+
 const userLimit = 10; // Limit the number of users displayed in the list
-const UserListPopup = ({ users, showUserList, setShowUserList }) => (
+
+const UserListPopup = ({
+  users = [],
+  userName,
+  showUserList,
+  setShowUserList,
+}) => (
   <>
     <button
       className="fixed right-4 top-1/2 transform -translate-y-1/2 bg-[#17d9a3] text-white p-4 rounded-full shadow-lg z-50"
@@ -18,19 +25,25 @@ const UserListPopup = ({ users, showUserList, setShowUserList }) => (
           >
             &times;
           </button>
-          <h2 className="text-2xl font-semibold mb-4">Users</h2>
-          {users.length > userLimit ? (
-            <p className="text-lg">
-              There are {users.length} users in the session.
-            </p>
+          <h2 className="text-2xl font-semibold mb-4">Users in session</h2>
+          {users.length > 0 ? (
+            users.length > userLimit ? (
+              <p className="text-lg">
+                There are {users.length} users in the session.
+              </p>
+            ) : (
+              <ul className="max-h-64 overflow-y-auto">
+                {users.map((user, index) => (
+                  <li key={index} className="mb-2 text-lg">
+                    {user}
+                    {user === userName && " (You)"}
+                    {index === 0 && " (Admin)"}
+                  </li>
+                ))}
+              </ul>
+            )
           ) : (
-            <ul className="max-h-64 overflow-y-auto">
-              {users.map((user, index) => (
-                <li key={index} className="mb-2 text-lg">
-                  {user}
-                </li>
-              ))}
-            </ul>
+            <p className="text-lg">No users in the session yet.</p>
           )}
         </div>
       </div>

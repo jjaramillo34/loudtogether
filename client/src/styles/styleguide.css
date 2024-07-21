@@ -1,0 +1,33 @@
+:root { 
+  --black: #000000;
+  --caribbean-green: #17d9a3;
+  --mirage: #191c32;
+  --white: #ffffff;
+ 
+  --font-size-l: 17px;
+  --font-size-m: 16px;
+  --font-size-s: 12px;
+  --font-size-xl: 18px;
+  --font-size-xxl: 25px;
+  --font-size-xxxl: 40px;
+ 
+  --font-family-montserrat: "Montserrat", Helvetica;
+}
+.montserrat-normal-mirage-17px {
+  color: var(--mirage);
+  font-family: var(--font-family-montserrat);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.montserrat-normal-mirage-16px {
+  color: var(--mirage);
+  font-family: var(--font-family-montserrat);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+:root {
+}

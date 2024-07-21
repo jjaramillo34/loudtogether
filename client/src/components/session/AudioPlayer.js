@@ -3,7 +3,9 @@ import React, {
   useEffect,
   useImperativeHandle,
   useRef,
+  useState,
 } from "react";
+import "../../styles/audioplayer.css";
 
 const AudioPlayer = forwardRef(
   (
@@ -16,10 +18,12 @@ const AudioPlayer = forwardRef(
       onSeek,
       onTimeUpdate,
       onDurationChange,
+      showControls,
     },
     ref
   ) => {
     const audioRef = useRef(null);
+    const [duration, setDuration] = useState(0);
 
     useImperativeHandle(ref, () => ({
       play: () => audioRef.current.play(),
@@ -51,30 +55,58 @@ const AudioPlayer = forwardRef(
       }
     }, [currentTime]);
 
-    useEffect(() => {
-      const audio = audioRef.current;
-      audio.addEventListener("timeupdate", handleTimeUpdate);
-      audio.addEventListener("durationchange", handleDurationChange);
-      audio.addEventListener("play", onPlay);
-      audio.addEventListener("pause", onPause);
-
-      return () => {
-        audio.removeEventListener("timeupdate", handleTimeUpdate);
-        audio.removeEventListener("durationchange", handleDurationChange);
-        audio.removeEventListener("play", onPlay);
-        audio.removeEventListener("pause", onPause);
-      };
-    }, [onPlay, onPause, onTimeUpdate, onDurationChange]);
-
     const handleTimeUpdate = () => {
       onTimeUpdate(audioRef.current.currentTime);
     };
 
     const handleDurationChange = () => {
+      setDuration(audioRef.current.duration);
       onDurationChange(audioRef.current.duration);
     };
 
-    return <audio ref={audioRef} src={src} />;
+    const handleSeek = (e) => {
+      const seekTime =
+        (e.nativeEvent.offsetX / e.target.offsetWidth) * duration;
+      onSeek(seekTime);
+    };
+
+    const formatTime = (time) => {
+      const minutes = Math.floor(time / 60);
+      const seconds = Math.floor(time % 60);
+      return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+    };
+
+    return (
+      <div className="audio-player">
+        <audio
+          ref={audioRef}
+          src={src}
+          onTimeUpdate={handleTimeUpdate}
+          onDurationChange={handleDurationChange}
+          onEnded={onPause}
+        />
+        <div className="progress-bar" onClick={handleSeek}>
+          <div
+            className="progress"
+            style={{ width: `${(currentTime / duration) * 100}%` }}
+          ></div>
+        </div>
+        <div className="time-display">
+          <span>{formatTime(currentTime)}</span> /{" "}
+          <span>{formatTime(duration)}</span>
+        </div>
+        {showControls && (
+          <div className="controls">
+            <button
+              onClick={isPlaying ? onPause : onPlay}
+              className="play-pause-btn"
+            >
+              {isPlaying ? "❚❚" : "▶"}
+            </button>
+          </div>
+        )}
+      </div>
+    );
   }
 );
 

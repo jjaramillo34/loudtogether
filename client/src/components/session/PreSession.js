@@ -1,51 +1,58 @@
-import React, { useState, useEffect } from "react";
-import {
-  uniqueNamesGenerator,
-  adjectives,
-  colors,
-  animals,
-} from "unique-names-generator";
+import React, { useState } from "react";
+import "../../styles/presession.css";
 
-const PreSession = ({ startSession, currentTime }) => {
-  const [userName, setUserName] = useState("");
+const PreSession = () => {
+  const [sessionCode, setSessionCode] = useState("");
 
-  const handleStartSession = () => {
-    let finalUserName = userName;
-    if (!finalUserName) {
-      finalUserName = uniqueNamesGenerator({
-        dictionaries: [adjectives, colors, animals],
-        separator: "-",
-        length: 3,
-      });
-      setUserName(finalUserName); // This ensures the generated name is set in the state
-    }
-    startSession(finalUserName);
+  const handleJoin = () => {
+    console.log("Joining session with code:", sessionCode);
+    // Add your join session logic here
   };
 
-  useEffect(() => {
-    // Perform any necessary operations with currentTime here
-    console.log("Current time:", currentTime);
-  }, [currentTime]);
-
   return (
-    <div className="relative w-full h-screen bg-white flex items-center justify-center overflow-hidden">
-      <div className="relative w-[375px] h-[667px] bg-white border border-gray-300 rounded-lg shadow-lg flex flex-col items-center justify-center">
-        <div className="absolute top-8 flex items-center justify-center">
-          <h1 className="text-4xl font-bold text-[#1f2d3d]">LoudTogether</h1>
+    <div className="pre-session screen">
+      <div className="bg-wrapper">
+        <div className="bg-circle"></div>
+        <div className="logo-wrapper">
+          <div className="logo-circle"></div>
+          <img
+            src="/img/logo-placeholder.png"
+            alt="LoudTogether Logo"
+            className="logo-image"
+          />
         </div>
-        <div className="absolute bottom-40 flex items-center justify-center w-3/4 max-w-md">
-          <div
-            className="bg-[#17d9a3] text-white text-center py-3 rounded-lg cursor-pointer flex items-center justify-center"
-            onClick={handleStartSession}
-          >
-            <span className="mr-2">Start Playing</span>
-            <img
-              className="w-4 h-4"
-              src="img/loudtogether-off-vector-AA079CA9-1A5D-44D4-AC1F-D4D0354F611C@2x.png"
-              alt="Vector"
+      </div>
+
+      <div className="content-wrapper">
+        <div className="home-title">
+          <h1 className="title">LoudTogether</h1>
+        </div>
+
+        <div className="session-input-wrapper">
+          <label htmlFor="session-code" className="input-label">
+            Enter Session Code:
+          </label>
+          <div className="input-container">
+            <input
+              id="session-code"
+              type="text"
+              value={sessionCode}
+              onChange={(e) => setSessionCode(e.target.value)}
+              placeholder="Enter code here..."
+              className="session-input"
             />
           </div>
         </div>
+
+        <button onClick={handleJoin} className="join-button">
+          <span className="join-text">Join Session</span>
+        </button>
+      </div>
+
+      <div className="menu-icon">
+        <div className="menu-dot"></div>
+        <div className="menu-dot"></div>
+        <div className="menu-dot"></div>
       </div>
     </div>
   );

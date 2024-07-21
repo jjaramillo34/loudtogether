@@ -16,7 +16,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: process.env.REACT_APP_CLIENT_ORIGIN || "http://localhost:3000",
     methods: ["GET", "POST"],
   },
 });
@@ -31,6 +31,7 @@ if (!fs.existsSync(AUDIO_DIR)) {
 }
 
 const MONGO_URI = process.env.REACT_APP_MONGO_URI;
+const PORT = process.env.REACT_APP_PORT || 5001;
 
 if (!MONGO_URI) {
   console.error("MONGO_URI is not set in environment variables");
@@ -154,17 +155,25 @@ const downloadAudio = (videoId) => {
   });
 };
 
-app.post("/join-session", async (req, res) => {
-  const { sessionName } = req.body;
-  console.log(`Joining session: ${sessionName}`);
-  let session = sessions.get(sessionName);
+app.post("/create-session", async (req, res) => {
+  const { url, sessionName } = req.body;
+  console.log(`Creating session: ${sessionName}`);
 
-  if (!session) {
-    console.log(`Creating new session: ${sessionName}`);
+  try {
+    const videoId = ytdl.getVideoID(url);
+    const videoInfo = await ytdl.getInfo(videoId);
+    const videoTitle = videoInfo.videoDetails.title;
+
+    let session = sessions.get(sessionName);
+
+    if (session) {
+      return res.status(400).json({ error: "Session name already exists" });
+    }
+
     session = {
       id: sessionName,
-      videoId: "dQw4w9WgXcQ", // Default video
-      videoTitle: "Rick Astley - Never Gonna Give You Up",
+      videoId,
+      videoTitle,
       users: [],
       currentTime: 0,
       isPlaying: false,
@@ -173,12 +182,31 @@ app.post("/join-session", async (req, res) => {
     sessions.set(sessionName, session);
 
     try {
-      await downloadAudio(session.videoId);
+      await downloadAudio(videoId);
     } catch (error) {
       console.error("Failed to download audio:", error);
-      res.status(500).json({ error: "Failed to download audio" });
-      return;
+      return res.status(500).json({ error: "Failed to download audio" });
     }
+
+    res.json({
+      sessionName,
+      videoId,
+      videoTitle,
+      audioUrl: `/audio/${videoId}.mp4`,
+    });
+  } catch (error) {
+    console.error("Error creating session:", error);
+    res.status(500).json({ error: "Failed to create session" });
+  }
+});
+
+app.post("/join-session", async (req, res) => {
+  const { sessionName } = req.body;
+  console.log(`Joining session: ${sessionName}`);
+  let session = sessions.get(sessionName);
+
+  if (!session) {
+    return res.status(404).json({ error: "Session not found" });
   }
 
   const userName = `User${uuidv4().substr(0, 8)}`;
@@ -209,13 +237,24 @@ app.post("/shorten-url", async (req, res) => {
     if (url) {
       res.json({
         shortUrl: `${req.protocol}://${req.get("host")}/${url.shortId}`,
+        shareDate: url.shareDate,
+        shareTime: url.shareTime,
       });
     } else {
       const shortId = shortid.generate();
       const shortUrl = `${req.protocol}://${req.get("host")}/${shortId}`;
-      url = new URL({ originalUrl: longUrl, shortUrl, shortId });
+      const now = new Date();
+      const shareDate = now.toISOString().split("T")[0]; // YYYY-MM-DD
+      const shareTime = now.toTimeString().split(" ")[0]; // HH:MM:SS
+      url = new URL({
+        originalUrl: longUrl,
+        shortUrl,
+        shortId,
+        shareDate,
+        shareTime,
+      });
       await url.save();
-      res.json({ shortUrl });
+      res.json({ shortUrl, shareDate, shareTime });
     }
   } catch (error) {
     console.error("Error shortening URL:", error);
@@ -328,7 +367,16 @@ io.on("connection", (socket) => {
   });
 });
 
-const PORT = process.env.PORT || 5001;
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-// add this line to test push to github
+// Graceful shutdown
+process.on("SIGTERM", () => {
+  console.log("SIGTERM signal received: closing HTTP server");
+  server.close(() => {
+    console.log("HTTP server closed");
+    mongoose.connection.close(false, () => {
+      console.log("MongoDB connection closed");
+      process.exit(0);
+    });
+  });
+});

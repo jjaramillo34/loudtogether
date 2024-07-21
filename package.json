@@ -2,11 +2,12 @@
   "name": "loudtogether",
   "version": "1.0.0",
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "cd server && node index.js",
     "server": "cd server && node index.js",
-    "client": "cd client && npm start"
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build"
   },
-  "devDependencies": {
-    "concurrently": "^6.5.1"
+  "dependencies": {
+    "concurrently": "^6.2.0"
   }
 }

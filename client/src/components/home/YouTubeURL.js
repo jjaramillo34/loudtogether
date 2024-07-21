@@ -11,7 +11,7 @@ const YouTubeURL = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${SERVER_URL}/create-session`, {
+      const response = await fetch(`/create-session`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

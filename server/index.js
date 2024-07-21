@@ -13,6 +13,16 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const app = express();
+
+// The "catchall" handler: for any request that doesn't
+// match one above, send back React's index.html file.
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+});
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, "../client/build")));
+
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
@@ -31,7 +41,7 @@ if (!fs.existsSync(AUDIO_DIR)) {
 }
 
 const MONGO_URI = process.env.REACT_APP_MONGO_URI;
-const PORT = process.env.REACT_APP_PORT || 5001;
+const PORT = process.env.REACT_APP_PORT || 5000;
 
 if (!MONGO_URI) {
   console.error("MONGO_URI is not set in environment variables");
@@ -367,7 +377,7 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(port, () => console.log(`Server running on port ${port}`));
 
 // Graceful shutdown
 process.on("SIGTERM", () => {

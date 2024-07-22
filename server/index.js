@@ -165,7 +165,7 @@ const downloadAudio = (videoId) => {
   });
 };
 
-app.post("/create-session", async (req, res) => {
+app.post("/api/create-session", async (req, res) => {
   const { url, sessionName } = req.body;
   console.log(`Creating session: ${sessionName}`);
 
@@ -210,7 +210,7 @@ app.post("/create-session", async (req, res) => {
   }
 });
 
-app.post("/join-session", async (req, res) => {
+app.post("/api/join-session", async (req, res) => {
   const { sessionName } = req.body;
   console.log(`Joining session: ${sessionName}`);
   let session = sessions.get(sessionName);
@@ -240,7 +240,7 @@ app.post("/join-session", async (req, res) => {
   });
 });
 
-app.post("/shorten-url", async (req, res) => {
+app.post("/api/shorten-url", async (req, res) => {
   const { longUrl } = req.body;
   try {
     let url = await URL.findOne({ originalUrl: longUrl });
@@ -272,7 +272,7 @@ app.post("/shorten-url", async (req, res) => {
   }
 });
 
-app.get("/:shortId", async (req, res) => {
+app.get("/api/:shortId", async (req, res) => {
   try {
     const url = await URL.findOne({ shortId: req.params.shortId });
     if (url) {

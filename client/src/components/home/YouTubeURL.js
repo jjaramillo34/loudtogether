@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const SERVER_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:5001";
+const SERVER_URL =
+  process.env.NODE_ENV === "production" ? "" : "http://localhost:5001";
 
 const YouTubeURL = () => {
   const [url, setUrl] = useState("");
@@ -11,7 +12,7 @@ const YouTubeURL = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`/create-session`, {
+      const response = await fetch(`${SERVER_URL}/api/create-session`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

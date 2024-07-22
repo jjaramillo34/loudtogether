@@ -42,7 +42,7 @@ const Session = () => {
 
     const joinSession = async () => {
       try {
-        const response = await fetch(`/join-session`, {
+        const response = await fetch(`/api/join-session`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ sessionName }),

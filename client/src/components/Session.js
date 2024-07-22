@@ -22,6 +22,9 @@ const Session = () => {
   const [showUserList, setShowUserList] = useState(false);
   const hasJoined = useRef(false);
 
+  const SERVER_URL =
+    process.env.NODE_ENV === "production" ? "" : "http://localhost:5001";
+
   const handleShortenUrl = useCallback(async () => {
     const longUrl = `${window.location.origin}/session/${sessionName}`;
     try {
@@ -42,7 +45,7 @@ const Session = () => {
 
     const joinSession = async () => {
       try {
-        const response = await fetch(`/api/join-session`, {
+        const response = await fetch(`${SERVER_URL}/join-session`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ sessionName }),

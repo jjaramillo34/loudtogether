@@ -1,0 +1,12 @@
+{
+  "name": "loudtogether-api",
+  "version": "1.0.0",
+  "dependencies": {
+    "@distube/ytdl-core": "^4.11.17",
+    "mongoose": "^6.9.2",
+    "redis": "^4.6.6",
+    "shortid": "^2.2.16",
+    "uuid": "^9.0.0",
+    "dotenv": "^16.0.3"
+  }
+}

@@ -2,12 +2,9 @@
   "name": "loudtogether",
   "version": "1.0.0",
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "node server/index.js",
-    "client": "cd client && npm start",
-    "build": "cd client && npm install && npm run build && cd ../server && npm install"
+    "vercel-build": "cd client && npm install && npm run build && cd ../api && npm install"
   },
-  "dependencies": {
-    "concurrently": "^6.2.0"
+  "devDependencies": {
+    "vercel": "^28.16.15"
   }
 }
